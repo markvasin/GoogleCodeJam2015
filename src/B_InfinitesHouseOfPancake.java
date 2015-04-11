@@ -14,8 +14,16 @@ public class B_InfinitesHouseOfPancake {
             return index + Collections.max(arr);
         }
         else {
-            if (Collections.max(arr) > arr.size()) {
-                int max = Collections.max(arr);
+            int max = Collections.max(arr);
+            int countval = 0;
+
+            for (int i = 0; i < arr.size(); i++) {
+                if (arr.get(i) > dividedVal && arr.get(i) != arr.indexOf(new Integer(max)))
+                    countval++;
+            }
+
+
+            if (dividedVal > countval) {
                 arr.remove(new Integer(max));
                 arr.add(max/2);
                 arr.add(max - max/2);
